@@ -1,4 +1,4 @@
-package geeCache
+package geecache
 
 // ByteView 使用[]byte可以缓存任意类型数据
 type ByteView struct {

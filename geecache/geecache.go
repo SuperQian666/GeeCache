@@ -27,18 +27,6 @@ type Group struct {
 	loader *singleflight.Group
 }
 
-//A Getter loads data for a key
-type Getter interface {
-	Get(key string) ([]byte, error)
-}
-
-// GetterFunc 实现Getter
-type GetterFunc func(key string) ([]byte, error)
-
-func (g GetterFunc) Get(key string) ([]byte, error) {
-	return g(key)
-}
-
 var (
 	mu     sync.RWMutex
 	groups = make(map[string]*Group)
